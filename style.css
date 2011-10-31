@@ -45,8 +45,8 @@ pre {
 h1 {
 	padding: 15px 20px;
 	border-bottom: 1px dotted #FFF;
-	background: #008BDF;
-	border-top: 3px solid #003B5F;
+	background: #57AF00;
+	border-top: 3px solid #316300;
 	color: #FFF;
 	margin: 0 0 20px 0;
 	position: relative;
@@ -160,13 +160,13 @@ p.top-links {
 
 .textarea {
 	display: block;
-	background: #FFFACD;
-	border: 5px solid #EEE;
+	background: #FFF;
+	border: 3px solid #DDD;
 	padding: 5px 10px;
 }
 
 .textarea textarea {
-	background: #FFFACD;
+	background: #FFF;
 	border: none;
 	width: 100%;
 	font-family: 'Open Sans', sans-serif;
