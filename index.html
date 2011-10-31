@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>flexibleArea.js - A jQuery plugin that dynamically updates textarea's height to fit the content.</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,800,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Allan:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="hl.css" />
+</head>
+<body>
+
+<a href="https://github.com/flaviusmatis/flexibleArea.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+
+<div class="content">
+
+	<p class="top-links">Check out my <a href="http://flaviusmatis.github.com">GitHub page</a> for other plugins.</p>
+
+	<h1>
+		<ul>
+			<li><a href="https://github.com/flaviusmatis/flexibleArea.js">Project page</a></li>
+			<li><a href="https://github.com/flaviusmatis/flexibleArea.js/issues">Issues</a></li>
+		</ul>
+		<strong>flexibleArea.js</strong>
+	</h1>
+
+	<p class="spacer"><strong>A jQuery plugin that dynamically updates textarea's height to fit the content.</strong></p>
+
+	<p class="spacer"><strong>Important notes:</strong> This plugin works for textareas with fixed width as well as for textareas with fluid width. The CSS resize property is set to "none" by this plugin, which means you will not be able to manually resize the textarea.</p>
+
+	<h2>Examples</h2>
+
+	<p class="spacer">
+		<span class="textarea">
+			<textarea spellcheck="false">This textarea has a default height of 72px set. The max-height is set to 200px. Type a few more lines to see the auto resize in action.</textarea>
+		</span>
+	</p>
+
+	<h2>Download</h2>
+
+	<p class="spacer">Get the zip containing the minified and uncompressed version <a href="http://flaviusmatis.github.com/flexibleArea.js/flexibleArea.zip">here</a>.</p>
+
+	<h2>How To Use</h2>
+
+	<p class="spacer"><strong>Step 1:</strong> together with JQuery, include jquery.flexibleArea.js in your page:</p>
+
+	<div class="block">
+
+<pre name="code" class="html">&lt;script type="text/javascript" src="path_to/jquery.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="path_to/jquery.flexibleArea.js"&gt;&lt;/script&gt;</pre>
+
+	</div>
+
+	<p class="spacer"><strong>Step 2:</strong> call the function on your textarea, as follows:</p>
+
+	<div class="block">
+
+<pre name="code" class="js">$(function() {
+    $(selector).flexible();
+});</pre>
+			
+	</div>
+
+	<h2>Options</h2>
+
+	<p>There are only 2 options available and these are set via CSS:</p>
+	<p> - the default height which you can specify using <strong>height</strong> or <strong>min-height</strong>; for best results, i suggest you always specify a default height</p>
+	<p class="spacer"> - the maximum height which you can specify using <strong>max-height</strong>; when the maximum height is reached, scroll bars will appear</p>
+
+	<h2>Support & Feedback</h2>
+
+	<p>For issues or suggestions please see <a href="https://github.com/flaviusmatis/flexibleArea.js">flexibleArea.js on Github</a>, or tweet <a href="http://twitter.com/#!/flaviusmatis">@flaviusmatis</a>.</p>
+
+	<p class="spacer">Thanks for your support!</p>
+
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="hl-all.js"></script>
+<script type="text/javascript" src="jquery.flexibleArea.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
