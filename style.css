@@ -176,4 +176,6 @@ p.top-links {
 	color: #333;
 	min-height: 72px;
 	max-height: 200px;
+	outline: none;
+	margin: 0;
 }
