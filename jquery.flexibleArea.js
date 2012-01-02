@@ -91,7 +91,7 @@
 				});
 
 				// Update textarea when needed
-				$textarea.bind('flexible',function(){
+				$textarea.bind('updateHeight', function(){
 					updateHeight();
 				});
 

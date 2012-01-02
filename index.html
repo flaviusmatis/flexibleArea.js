@@ -38,7 +38,7 @@
 
 	<h2>Download</h2>
 
-	<p class="spacer">Get the zip containing the minified and uncompressed version <a href="http://flaviusmatis.github.com/flexibleArea.js/flexibleArea.zip">here</a>.</p>
+	<p class="spacer">Get the zip containing the flexibleArea plugin <a href="http://flaviusmatis.github.com/flexibleArea.js/flexibleArea.zip">here</a>.</p>
 
 	<h2>How To Use</h2>
 
@@ -59,6 +59,16 @@
     $(selector).flexible();
 });</pre>
 			
+	</div>
+
+	<p class="spacer"><strong>Step 3:</strong> OPTIONAL - whenever you update the textarea content via Javascript, you need to trigger the custom "updateHeight" event to update the textarea:</p>
+
+	<div class="block">
+
+<pre name="code" class="js">
+$(selector).trigger('updateHeight');
+</pre>
+
 	</div>
 
 	<h2>Options</h2>
