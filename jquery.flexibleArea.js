@@ -1,8 +1,11 @@
-/**
-* flexibleArea.js v1.0.0
+/*!
+* flexibleArea.js v1.0
 * A jQuery plugin that dynamically updates textarea's height to fit the content.
-* Author: Flavius Matis - http://flaviusmatis.github.com/
-* URL: https://github.com/flaviusmatis/flexibleArea.js
+* http://flaviusmatis.github.com/flexibleArea.js/
+*
+* Copyright 2012, Flavius Matis
+* Released under the MIT license.
+* http://flaviusmatis.github.com/license.html
 */
 
 (function($){
