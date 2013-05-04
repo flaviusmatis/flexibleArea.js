@@ -1,5 +1,5 @@
 /*!
-* flexibleArea.js v1.0
+* flexibleArea.js v1.1
 * A jQuery plugin that dynamically updates textarea's height to fit the content.
 * http://flaviusmatis.github.com/flexibleArea.js/
 *
@@ -25,10 +25,13 @@
 				'border-top-width',
 				'border-right-width',
 				'border-bottom-width',
-				'border-left-width'
+				'border-left-width',
+				'-moz-box-sizing',
+				'-webkit-box-sizing',
+				'box-sizing'
 			];
 
-			return this.each( function() {
+			return this.each(function(){
 
 				if (this.type !== 'textarea')	return false;
 					
@@ -47,6 +50,8 @@
 					$clone.css(styles[i],$textarea.css(styles[i]));
 				}
 
+				var hasBoxModel = $textarea.css('box-sizing') == 'border-box' || $textarea.css('-moz-box-sizing') == 'border-box' || $textarea.css('-webkit-box-sizing') == 'border-box';
+				var heightCompensation = parseInt($textarea.css('border-top-width')) + parseInt($textarea.css('padding-top')) + parseInt($textarea.css('padding-bottom')) + parseInt($textarea.css('border-bottom-width'));
 				var textareaHeight = parseInt($textarea.css('height'), 10);
 				var lineHeight = parseInt($textarea.css('line-height'), 10) || parseInt($textarea.css('font-size'), 10);
 				var minheight = lineHeight * 2 > textareaHeight ? lineHeight * 2 : textareaHeight;
@@ -60,13 +65,13 @@
 				}
 
 				function setHeightAndOverflow(){
-					var cloneHeight = $clone.height() + lineHeight;
+					var cloneHeight = $clone.height();
 					var overflow = 'hidden';
-					var height = cloneHeight;
-					if (cloneHeight > maxheight) {
+					var height = hasBoxModel ? cloneHeight + lineHeight + heightCompensation : cloneHeight + lineHeight;
+					if (height > maxheight) {
 						height = maxheight;
 						overflow = 'auto';
-					} else if (cloneHeight < minheight) {
+					} else if (height < minheight) {
 						height = minheight;
 					}
 					if ($textarea.height() !== height) {
@@ -102,14 +107,11 @@
 				$(function(){
 					updateHeight();
 				});
-				
 			});
-			
 		}
 	};
 
 	$.fn.flexible = function(method) {
-
 		// Method calling logic
 		if (methods[method]) {
 			return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
@@ -118,7 +120,6 @@
 		} else {
 			$.error('Method ' + method + ' does not exist on jQuery.flexible');
 		}
-
 	};
 
 })(jQuery);
