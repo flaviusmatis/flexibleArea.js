@@ -1,5 +1,5 @@
 /*!
-* flexibleArea.js v1.1
+* flexibleArea.js v1.2
 * A jQuery plugin that dynamically updates textarea's height to fit the content.
 * http://flaviusmatis.github.com/flexibleArea.js/
 *
@@ -45,10 +45,14 @@
 					'border-style' : 'solid'
 				}).appendTo(document.body);
 
-				// Apply textarea styles to clone
-				for (var i=0; i < styles.length; i++) {
-					$clone.css(styles[i],$textarea.css(styles[i]));
+				function copyStyles(){
+					for (var i=0; i < styles.length; i++) {
+						$clone.css(styles[i],$textarea.css(styles[i]));
+					}
 				}
+
+				// Apply textarea styles to clone
+				copyStyles();
 
 				var hasBoxModel = $textarea.css('box-sizing') == 'border-box' || $textarea.css('-moz-box-sizing') == 'border-box' || $textarea.css('-webkit-box-sizing') == 'border-box';
 				var heightCompensation = parseInt($textarea.css('border-top-width')) + parseInt($textarea.css('padding-top')) + parseInt($textarea.css('padding-bottom')) + parseInt($textarea.css('border-bottom-width'));
@@ -85,7 +89,7 @@
 				});
 
 				// Update textarea on window resize
-				$(window).bind('resize', function (){
+				$(window).bind('resize', function(){
 					var cleanWidth = parseInt($textarea.width(), 10);
 					if ($clone.width() !== cleanWidth) {
 						$clone.css({'width': cleanWidth + 'px'});
@@ -95,11 +99,12 @@
 
 				// Update textarea on blur
 				$textarea.bind('blur',function(){
-					setHeightAndOverflow()
+					setHeightAndOverflow();
 				});
 
 				// Update textarea when needed
 				$textarea.bind('updateHeight', function(){
+					copyStyles();
 					updateHeight();
 				});
 
