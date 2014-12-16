@@ -1,5 +1,5 @@
 /*!
-* flexibleArea.js v1.2
+* flexibleArea.js v1.3
 * A jQuery plugin that dynamically updates textarea's height to fit the content.
 * http://flaviusmatis.github.com/flexibleArea.js/
 *
@@ -64,7 +64,7 @@
 				function updateHeight() {
 					var textareaContent = $textarea.val().replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/&/g, '&amp;').replace(/\n/g, '<br/>');
 					// Adding an extra white space to make sure the last line is rendered.
-					$clone.html(textareaContent + '&nbsp;');
+					$clone.html(textareaContent + '&nbsp;').css({'width': parseInt($textarea.width(), 10) + 'px'});
 					setHeightAndOverflow();
 				}
 
@@ -90,9 +90,7 @@
 
 				// Update textarea on window resize
 				$(window).bind('resize', function(){
-					var cleanWidth = parseInt($textarea.width(), 10);
-					if ($clone.width() !== cleanWidth) {
-						$clone.css({'width': cleanWidth + 'px'});
+					if ($clone.width() !== parseInt($textarea.width(), 10)) {
 						updateHeight();
 					}
 				});
