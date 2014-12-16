@@ -69,6 +69,7 @@
 				}
 
 				function setHeightAndOverflow(){
+					$clone.width($textarea.width());
 					var cloneHeight = $clone.height();
 					var overflow = 'hidden';
 					var height = hasBoxModel ? cloneHeight + lineHeight + heightCompensation : cloneHeight + lineHeight;
