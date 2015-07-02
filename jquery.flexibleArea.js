@@ -56,7 +56,7 @@
 
 				var hasBoxModel = $textarea.css('box-sizing') == 'border-box' || $textarea.css('-moz-box-sizing') == 'border-box' || $textarea.css('-webkit-box-sizing') == 'border-box';
 				var heightCompensation = parseInt($textarea.css('border-top-width')) + parseInt($textarea.css('padding-top')) + parseInt($textarea.css('padding-bottom')) + parseInt($textarea.css('border-bottom-width'));
-				var textareaHeight = parseInt($textarea.css('height'), 10);
+				var textareaHeight = parseInt($textarea.height(), 10);
 				var lineHeight = parseInt($textarea.css('line-height'), 10) || parseInt($textarea.css('font-size'), 10);
 				var minheight = lineHeight * 2 > textareaHeight ? lineHeight * 2 : textareaHeight;
 				var maxheight = parseInt($textarea.css('max-height'), 10) > -1 ? parseInt($textarea.css('max-height'), 10) : Number.MAX_VALUE;
